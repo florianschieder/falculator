@@ -1,11 +1,11 @@
-SOURCES = falculator.cpp
+SOURCES = number.cpp
 
 libfalculator.so: ${SOURCES}
 	mkdir -p ../bin
-	g++ -shared -fpic -o ../bin/$@ ${SOURCES}
+	g++ -shared -fpic -I../include -o ../bin/$@ ${SOURCES}
 
 install:
-	cp libfalculator.so /usr/lib/libfalculator.so
+	cp ../bin/libfalculator.so /usr/lib/libfalculator.so
 
 uninstall:
 	rm -f /usr/lib/libfalculator.so

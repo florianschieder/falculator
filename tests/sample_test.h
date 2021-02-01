@@ -1,13 +1,15 @@
-#include <falculator.h>
+#include <number.h>
 
 #include <cxxtest/TestSuite.h>
 
-class SampleTest : public CxxTest::TestSuite
+class NumberTest : public CxxTest::TestSuite
 {
 public:
-    void testSample()
+    // TODO: remove this dummy test when `Number` is more than a dummy
+    // bucket for an integer value
+    void testDummyNumber()
     {
-        TS_ASSERT_EQUALS(42, falculator_is_working());
-        TS_ASSERT_EQUALS(1, falculator_is_working(1));
+        falculator::Number n(42);
+        TS_ASSERT_EQUALS(42, n.getValue());
     }
 };
