@@ -1,7 +1,8 @@
 SOURCES = falculator.cpp
 
 libfalculator.so: ${SOURCES}
-	g++ -shared -fpic -o $@ ${SOURCES}
+	mkdir -p ../bin
+	g++ -shared -fpic -o ../bin/$@ ${SOURCES}
 
 install:
 	cp libfalculator.so /usr/lib/libfalculator.so
