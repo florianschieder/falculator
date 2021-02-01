@@ -1,4 +1,4 @@
-SOURCES = number.cpp
+SOURCES = cache.cpp number.cpp
 
 libfalculator.so: ${SOURCES}
 	mkdir -p ../bin

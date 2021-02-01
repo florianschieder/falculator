@@ -1,4 +1,4 @@
-TESTS = sample_test.h
+TESTS = test_cache.h test_number.h
 
 tests.out: ${TESTS}
 	cxxtestgen --abort-on-fail --have-eh --xunit-printer -o runner.cpp ${TESTS}
