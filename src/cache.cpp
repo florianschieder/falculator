@@ -12,7 +12,7 @@ std::unordered_map<std::string, Number> cache;
 Number falculator::cached(Number (*function)(Number), Number param)
 {
     char id[256];
-    sprintf(id, "__cached__%p__%d", function, param);
+    sprintf(id, "__cached__%p__%d", function, param.getValue());
 
     std::string cache_id = std::string(id);
 
