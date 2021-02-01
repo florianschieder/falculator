@@ -17,5 +17,6 @@
 *.a
 *.out
 
+bin/*
 TEST*.xml
 tests/runner.cpp

@@ -1,11 +1,19 @@
 SOURCES = cache.cpp number.cpp
+FLAGS = -shared -fpic -I../include -Wall -Werror
+OUT = ../bin/libfalculator.so
 
-libfalculator.so: ${SOURCES}
+CUSTOM_RELEASE_FLAGS =
+
+debug: ${SOURCES}
 	mkdir -p ../bin
-	g++ -shared -fpic -I../include -o ../bin/$@ ${SOURCES}
+	g++ -g ${FLAGS} -o ${OUT} ${SOURCES}
+
+release: ${SOURCES}
+	mkdir -p ../bin
+	g++ ${CUSTOM_RELEASE_FLAGS} ${FLAGS} -o ${OUT} ${SOURCES}
 
 install:
-	cp ../bin/libfalculator.so /usr/lib/libfalculator.so
+	cp ${OUT} /usr/lib/libfalculator.so
 
 uninstall:
 	rm -f /usr/lib/libfalculator.so
